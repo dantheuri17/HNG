@@ -4,9 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0077b6;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #0077b6;
+        }
+    </style>
 </head>
 <body>
-    <h1 data-testid="slackUserName">Daniel Theuri</h1>
-    <a href="www.github.com/dantheuri17/stage">Git</a>
+    <h1 data-testid="slackUserName">DevTheuri</h1>
+    <img src="https://ca.slack-edge.com/T05FFAA91JP-U05RXBLG8KA-287defecd998-512" alt="DevTheuri" data-testid="slackDisplayImage">
+    <h2 data-testid="currentDayOfTheWeek"></h2>
+    <h2 data-testid="currentUTCTime"></h2>
+    <h2 data-testid="frontend">Frontend</h2>
+    <a href="https://github.com/dantheuri17/HNG" data-testid="githubURL">Github Repository Link</a>
+
+    <script>
+
+        var currentDate = new Date();
+
+        var daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        var currentDayOfWeek = daysOfWeek[currentDate.getDay()];
+
+        var currentUTCTimeInMilliseconds = currentDate.getTime();
+
+        document.querySelector('[data-testid="currentDayOfTheWeek"]').textContent = "Current Day: " + currentDayOfWeek;
+        document.querySelector('[data-testid="currentUTCTime"]').textContent = "Current UTC Time (Milliseconds): " + currentUTCTimeInMilliseconds;
+    </script>
 </body>
 </html>
